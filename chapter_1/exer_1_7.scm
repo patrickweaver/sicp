@@ -12,19 +12,19 @@
       0.001
   )
 )
-  
+
 (define (improve guess x)
   (average guess (/ x guess)))
-  
+
 (define (sqrt-iter guess x)
   (if (good-enough? guess x)
       guess
       (sqrt-iter (improve guess x) x)))
-      
+
 (define (sqrt x)
   (sqrt-iter 1.0 x))
 
-; With very small numbers the difference in good-enough? is too coarse to keep the procedure recursing enough times. The hard-coded proximity would need to be smaller than the root. 
+; With very small numbers the difference in good-enough? is too coarse to keep the procedure recursing enough times. The hard-coded proximity would need to be smaller than the root.
 
 (sqrt 0.0001)
 ; 0.01
@@ -41,7 +41,7 @@
 (define (good-enough? guess x)
   (= (improve guess x) guess))
 )
-  
+
 (sqrt 0.0001)
 ; 0.01
 
