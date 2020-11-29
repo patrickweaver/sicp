@@ -15,8 +15,7 @@ The numbers at the edge of the triangle are all 1, and each number inside the tr
 
 
 (define (pascal-triangle row col)
-  (cond ((= row 1) 1)
-        ((= col 1) 1)
+  (cond ((= col 1) 1)
         ((= row col) 1)
         (else (+ (pascal-triangle (- row 1) col)
                  (pascal-triangle (- row 1) (- col 1))
